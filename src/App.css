@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+main {
+	display: grid;
+	grid-template-columns: 75% 25%;
+	grid-template-rows: repeat(3, auto);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+	grid-column: 1/2;
+	grid-row: 1/2;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+section.mode {
+	grid-column: 1/2;
+	grid-row: 2/3;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+section.card {
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	gap: 10px;
+	grid-column: 1/2;
+	grid-row: 3/4;
 }
 
-.App-link {
-  color: #61dafb;
+.card-number {
+	border: 1px solid;
+	border-radius: 5px;
+	cursor: pointer;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.number-selected {
+	background-color: gray;
+}
+
+section.results {
+	grid-column: 2/3;
+	grid-row: 1/-1;
+}
+
+#guesses {
+	display: flex;
+	justify-content: space-around;
+}
+
+#guesses > div {
+	background-color: pink;
+	border-radius: 5px;
+	height: 30px;
+	width: 40px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	cursor: default;
+}
+
+#guesses > div > div {
+	position: absolute;
+	cursor: pointer;
+	top: -6px;
+	right: -6px;
+	border: 1px solid tomato;
+	border-radius: 50%;
+	width: 14px;
+	height: 14px;
+	background-color: #fff;
+	display: none;
+}
+
+#guesses > div:hover > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
