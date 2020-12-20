@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { GiClover } from 'react-icons/gi'
-import { FiX } from 'react-icons/fi'
+import { FiX, FiRefreshCw, FiPlayCircle } from 'react-icons/fi'
 
 import Button from './components/Button'
 import NumbersArea from './components/NumbersArea'
@@ -187,8 +187,8 @@ function App() {
 						</NumbersArea>
 					</div>
 					<div id="buttons-wrapper">
-						<Button className={`${mode}-lotto`} onClick={() => playGame(mode)} disabled={guess.length !== maxNum || result.length}>Draw!</Button>
-						<Button className={`${mode}-lotto`} onClick={reset} disabled={!result.length}>Reset</Button>
+						<Button className={`action-button ${mode}-lotto`} onClick={() => playGame(mode)} disabled={(guess.length !== maxNum || result.length) || (!guess.length && !result.length)}><FiPlayCircle /> Draw!</Button>
+						<Button className={`action-button ${mode}-lotto`} onClick={reset} disabled={!result.length}><FiRefreshCw /> Reset</Button>
 					</div>
 					{!result.length ? null : <div>
 						<h2>Results</h2>

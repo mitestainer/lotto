@@ -11,7 +11,22 @@
 	cursor: pointer;
 }
 
+.game-button svg {
+	margin-right: 5px;
+}
+
 .game-button:disabled {
     cursor: not-allowed;
-    background-color: gray;
+	background-color: #aaa;
+	color: #d1d1d1
+}
+
+@media screen and (max-width: 767px) {
+	.game-button {
+		width: 150px;
+		height: 50px;
+		font-size: 12px;
+		padding: 10px 20px;
+		margin-bottom: 10px;
+	}
 }

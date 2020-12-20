@@ -1,5 +1,6 @@
 .App {
 	height: 100%;
+	min-height: 100%;
 	background-color: #eee;
 	padding: 10px;
 	display: flex;
@@ -21,16 +22,12 @@ main {
 	border-radius: 10px;
 }
 
-section.mode {
+.mode {
 	grid-column: 1/2;
 	grid-row: 1/2;
 	display: flex;
 	justify-content: space-around;
 	align-items: flex-start;
-}
-
-.mode-button svg {
-	margin-right: 5px;
 }
 
 h1 {
@@ -64,7 +61,7 @@ h1 svg {
 	background-color: #f78100;
 }
 
-section.card {
+.card {
 	grid-column: 1/2;
 	grid-row: 3/4;
 	display: flex;
@@ -101,7 +98,7 @@ section.card {
 	color: #fff;
 }
 
-section.results {
+.results {
 	grid-column: 2/3;
 	grid-row: 1/-1;
 	overflow: auto;
@@ -152,4 +149,38 @@ section.results {
 #buttons-wrapper {
 	display: flex;
 	justify-content: space-around;
+}
+
+@media screen and (max-width: 767px) {
+	.App {
+		height: auto;
+		align-items: unset;
+	}
+
+	main {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto 1fr auto;
+		max-width: 100%;
+		max-height: 100%;
+		min-height: 100%;
+		height: auto;
+	}
+
+	.mode {
+		flex-wrap: wrap;
+	}
+
+	.game-card {
+		grid-template-columns: repeat(5, 1fr);
+	}
+
+	.card-number {
+		height: 50px;
+	}
+
+	.results {
+		grid-column: 1/2;
+		grid-row: 4/5;
+		overflow: initial;
+	}
 }
